@@ -1,14 +1,10 @@
 ﻿using NPOI.SS.UserModel;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
-using System.Security.Cryptography;
 
 namespace tslinkcn.tools
 {
@@ -265,13 +261,13 @@ namespace tslinkcn.tools
 
         public static void WritePrintername(string printerName)
         {
-            INIClass iniclass = new INIClass("config.ini");
+            INI iniclass = new INI("config.ini");
             iniclass.IniWriteValue("Other", "printer", printerName);
         }
 
         public static string ReadPrinterName()
         {
-            INIClass iniclass = new INIClass("config.ini");
+            INI iniclass = new INI("config.ini");
             return iniclass.IniReadValue("Other", "printer");
 
         }
